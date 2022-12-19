@@ -18,13 +18,24 @@ void Buttom_Handler(void)
 {
   
   uint16 state=0;
+  uint16 state2 =0;
   if(GPIO_PORTF_RIS_REG)
   {
    if(GPIO_PORTF_RIS_REG)
    {
-   state = GPIO_PORTF_RIS_REG & 0x31 ;
+   state = GPIO_PORTF_RIS_REG & 0x11 ;
    }
   }
+  
+  if(GPIO_PORTE_RIS_REG)
+  {
+   if(GPIO_PORTE_RIS_REG)
+   {
+   state2 = GPIO_PORTE_RIS_REG & 0x20 ;
+   }
+  }
+  
+  
  if(state==0x01)
  {
   
@@ -68,7 +79,7 @@ void Buttom_Handler(void)
    }
  }
  
- if(state==0x20)
+ if(state2==0x20)
  {
    if (state_flag == 3)
    {
@@ -82,6 +93,7 @@ void Buttom_Handler(void)
  
    GPIO_PORTF_ICR_REG   |= (1<<0); 
    GPIO_PORTF_ICR_REG   |= (1<<4);
+   GPIO_PORTE_ICR_REG   |= (1<<5);
 }
 
 
