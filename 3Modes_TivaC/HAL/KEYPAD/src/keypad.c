@@ -108,13 +108,13 @@ static uint8 KEYPAD_4x4_adjustKeyNumber(uint8 button_number)
 	uint8 keypad_button = 0;
 	switch(button_number)
 	{
-		case 1: keypad_button = 7;
+		case 1: keypad_button = 1;
 				break;
-		case 2: keypad_button = 8;
+		case 2: keypad_button = 2;
 				break;
-		case 3: keypad_button = 9;
+		case 3: keypad_button = 3;
 				break;
-		case 4: keypad_button = '%'; // ASCII Code of %
+		case 4: keypad_button = '+'; // ASCII Code of +
 				break;
 		case 5: keypad_button = 4;
 				break;
@@ -122,23 +122,23 @@ static uint8 KEYPAD_4x4_adjustKeyNumber(uint8 button_number)
 				break;
 		case 7: keypad_button = 6;
 				break;
-		case 8: keypad_button = '*'; /* ASCII Code of '*' */
+		case 8: keypad_button = '-'; /* ASCII Code of '-' */
 				break;		
-		case 9: keypad_button = 1;
+		case 9: keypad_button = 7;
 				break;
-		case 10: keypad_button = 2;
+		case 10: keypad_button = 8;
 				break;
-		case 11: keypad_button = 3;
+		case 11: keypad_button = 9;
 				break;
-		case 12: keypad_button = '-'; /* ASCII Code of '-' */
+		case 12: keypad_button = '/'; /* ASCII Code of '/' */
 				break;
-		case 13: keypad_button = 13;  /* ASCII of Enter */
+		case 13: keypad_button = '*';  /* ASCII of '*' */
 				break;			
 		case 14: keypad_button = 0;
 				break;
-		case 15: keypad_button = '='; /* ASCII Code of '=' */
+		case 15: keypad_button = 13; /* ASCII Code of Enter */
 				break;
-		case 16: keypad_button = '+'; /* ASCII Code of '+' */
+		case 16: keypad_button = '='; /* ASCII Code of '=' */
 				break;
 		default: keypad_button = button_number;
 				break;
