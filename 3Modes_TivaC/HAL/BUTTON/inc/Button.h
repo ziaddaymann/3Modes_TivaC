@@ -20,7 +20,7 @@
 
 #define BUTTOM1_PORT     PORTF_ID
 #define BUTTOM2_PORT     PORTF_ID
-#define BUTTOM3_PORT     PORTF_ID
+#define BUTTOM3_PORT     PORTE_ID
 
 
 #define BUTTOM1_PIN      PIN0_ID
