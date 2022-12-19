@@ -208,18 +208,34 @@ void CalcMode ( void )
 
 void TimerMode ( void )
 {
-  uint8 cmd;
+  uint8 cmd , cmd2;
   state_flag = 2;
   LCD_clearScreen();
-  LCD_displayString("enter time");
+  LCD_displayString("enter time in min");
   
-  cmd = KEYPAD_getPressedKey();
+	do 
+	{
+          cmd = KEYPAD_getPressedKey();
+          LCD_moveCursor(0 , 8);   							// set cursor location at (0,8)
+	LCD_displayCharacter(cmd);
+	}while (cmd == '=');
+	
+	LCD_clearScreen();
+        LCD_displayString("enter time in sec");
   
-  sec = cmd;
+	do 
+	{
+          cmd2 = KEYPAD_getPressedKey();
+          LCD_moveCursor(0 , 8);   							// set cursor location at (0,8)
+	LCD_displayCharacter(cmd2);
+	}while (cmd2 == '=');
+  
+  min = cmd;
+ sec = cmd2;
   
   SysTick_SetCallBack(SystickNewTick);
   
-  SysTick_Start(cmd);
+  SysTick_Start( (cmd2) + (cmd * 60) );
   
   while (1)
   {
